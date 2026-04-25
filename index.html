@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aviation Analytics Dashboard</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .controls {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        select, button {
+            padding: 8px 12px;
+            margin: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        button {
+            background: #6c5ce7;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #5a4bd6;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .chart-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        #tooltip {
+            position: absolute;
+            background: #2d3436;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>✈ Aviation Accident Analytics</h1>
+
+<div class="controls">
+    <label>Filter by Operator:</label>
+    <select id="filter"></select>
+    <button id="toggleBtn">Reconfigure View</button>
+</div>
+
+<div class="card">
+    <div class="chart-title">Top Operators by Fatalities</div>
+    <div id="chart"></div>
+</div>
+
+<div class="card">
+    <div class="chart-title">Fatalities Trend Over Time</div>
+    <div id="lineChart"></div>
+</div>
+
+<div id="tooltip"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
